@@ -1,0 +1,20 @@
+name: Trrraw Build and deploy
+description: Use terraw wrapper for AWS deployments
+
+inputs:
+  enviroment:
+    description: Deployment region eg staging-au, production-us etc.
+    required: true
+  aws_region:
+    description: AWS region for AWS CLI
+    required: true
+  access_key_id:
+    description: AWS access key id
+    required: true
+  secret_access_key:
+    description: AWS secret access key
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+
