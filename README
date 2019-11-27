@@ -3,11 +3,11 @@
 This action wraps [terraw](https://github.com/miere/terraw) generated deployment script, uploads Docker to ECR and spin up new Code Deploy.
 
 
-##Required permissions: 
- You should use *deployment_user* credentials for deployment, but if for some reason this is not an option, these are 
- the minimum permissions that one should have to successfully deploy service. 
+## Required permissions:
+ You should use *deployment_user* credentials for deployment, but if for some reason this is not an option, these are
+ the minimum permissions that one should have to successfully deploy service.
 
- 
+
 <b>ECR</b>
 
 - GetAuthorizationToken
@@ -24,15 +24,15 @@ This action wraps [terraw](https://github.com/miere/terraw) generated deployment
 - DescribeParameters
 
 
-## Required Parameters 
+## Required Parameters
 
-Four parameters must be passed to run action succesfully 
+Four parameters must be passed to run action succesfully
 
 ```yml
     access_key_id: KEEP THIS SECRET
     secret_access_key: KEEP THIS SECRET ALSO
     aws_region: us-east-1   // Region recognized by AWS
-    enviroment: staging-us  // Enviroment recognized by terraw 
+    enviroment: staging-us  // Enviroment recognized by terraw
 ```
 
 Right now ( November 2019 ) github does not offer global secrets, so access and secret key must be specified per repo.
@@ -40,8 +40,8 @@ Right now ( November 2019 ) github does not offer global secrets, so access and 
 Github recognized this, as an problem and working on solution. Keep checking this topic for updates: [CLICK](https://github.community/t5/GitHub-Actions/Method-ability-to-share-secrets-across-multiple-repositories-in/td-p/30958)
 
 
-## Example 
-Sample main.yml to trigger action: 
+## Example
+Sample main.yml to trigger action:
  ```yml
 on:
   push:
@@ -62,4 +62,4 @@ jobs:
           enviroment: staging
 ```
 
-In case of deploying service to three different regions, we need to specify three jobs.
+In case of deploying service to multiple regions, we need to specify multiple jobs.
