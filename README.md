@@ -39,6 +39,30 @@ Right now ( November 2019 ) github does not offer global secrets, so access and 
 
 Github recognized this, as an problem and working on solution. Keep checking this topic for updates: [CLICK](https://github.community/t5/GitHub-Actions/Method-ability-to-share-secrets-across-multiple-repositories-in/td-p/30958)
 
+## Dockerfile 
+This is Dockerfile based action. 
+
+It's using official <i>dind</i> (Docker inside Docker) image with addition of AWS CLI and Python goodies to install AWS CLI
+
+
+## Folder structure 
+
+I could not find any information about shh'ing action from different repository. The only way is to make it public and
+expose in Marketplace. 
+Or keep it in the same directory 
+
+```.env
+
+root 
+ ├─ .github	
+     ├─build-and-deploy
+     │   ├─ action.yml
+     │   ├─ Dockerfile
+     │   └─ entrypoint.sh
+     │ 
+     ├─workflows
+         └─ main.yml   
+```
 
 ## Example
 Sample main.yml to trigger action:
