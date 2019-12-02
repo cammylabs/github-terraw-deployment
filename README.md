@@ -25,12 +25,14 @@ This action wraps [terraw](https://github.com/miere/terraw) generated deployment
 - GetParameter
 - DescribeParameters
 
+<B> Different lambdas require different permissions though </b> 
+
 
 ## Required Parameters
 
 Four parameters must be passed to run action succesfully
 
-Different lambdas require different permissions though 
+
 
 ```yml
     access_key_id: KEEP THIS SECRET
@@ -50,6 +52,10 @@ It's using official <i>dind</i> (Docker inside Docker) image with addition of AW
 
 
 ## Folder structure 
+
+This is not valid anymore, unless you want to downloand this action and run directly from repo 
+
+_____
 
 I could not find any information about shh'ing action from different repository. The only way is to make it public and
 expose in Marketplace. 
@@ -80,9 +86,10 @@ jobs:
     name: Deploy Dockerfile
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0.0
-      - name: staging-us
-        uses: ./.github/build-and-deploy
+       - name: Checkout
+        uses: actions/checkout@v1
+       - name: Terraw Build and deploy
+        uses: cammylabs/github-terraw-deployment@1.00.2
         with:
           access_key_id: ${{ secrets.SECRET_ID }}
           secret_access_key: ${{ secrets.SECRET_KEY_ }}
