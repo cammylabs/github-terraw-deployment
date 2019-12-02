@@ -28,9 +28,11 @@ This action wraps [terraw](https://github.com/miere/terraw) generated deployment
 
 Four parameters must be passed to run action succesfully
 
+Different lambdas require different permissions though 
+
 ```yml
     access_key_id: KEEP THIS SECRET
-    secret_access_key: KEEP THIS SECRET ALSO
+    secret_access_key: KEEP THIS SECRET 
     aws_region: us-east-1   // Region recognized by AWS
     enviroment: staging-us  // Enviroment recognized by terraw
 ```

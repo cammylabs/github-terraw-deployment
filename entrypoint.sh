@@ -11,7 +11,6 @@ function main(){
 }
 
 function sanitize(){
- echo ${1} "---" ${2}
   if [ -z "${1}" ]; then
     >&2 echo "Unable to find the ${2}. Did you set with.${2}?"
     exit 1
