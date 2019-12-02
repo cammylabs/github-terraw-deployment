@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -e
 
 function main(){
   sanitize "${INPUT_ENVIROMENT}" "enviroment"
@@ -38,7 +37,7 @@ function runDeployer() {
 
   DEPLOY_LOCATION=${locate -n 1 deploy.sh}
   echo DEPLOY_LOCATION
-  sh .DEPLOY_LOCATION ${INPUT_ENVIROMENT}
+  sh DEPLOY_LOCATION ${INPUT_ENVIROMENT}
 
   echo 'DEPLOYMENT ' ${INPUT_ENVIROMENT} ' DONE'
 }
