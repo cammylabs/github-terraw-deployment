@@ -1,6 +1,6 @@
 # Github Action: <i>terraw</i> Project Deployment
 
-#### THIS IS PUBLIC PROJECT, KEEPS SECRET AWAY 
+#### THIS IS PUBLIC PROJECT, KEEP SECRETS AWAY 
 
 This action wraps [terraw](https://github.com/miere/terraw) generated deployment script, uploads Docker to ECR and spin up new Code Deploy.
 
