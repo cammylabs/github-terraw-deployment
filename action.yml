@@ -1,5 +1,5 @@
-name: Trrraw Build and deploy
-description: Use terraw wrapper for AWS deployments
+name: Terraw Build and deploy
+description: Terraw wrapper for AWS deployments
 
 inputs:
   enviroment:
