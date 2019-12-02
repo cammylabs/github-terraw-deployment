@@ -36,9 +36,8 @@ function  setUpAWSCredential() {
 function runDeployer() {
   echo 'RUNINING DEPLOYMENT FOR ' ${INPUT_ENVIROMENT}
 
-  DEPLOY_LOCATION=${ locate -n1 deploy.sh}
+  DEPLOY_LOCATION=${locate -n 1 deploy.sh}
   echo DEPLOY_LOCATION
-  cd ~/deployment
   sh .DEPLOY_LOCATION ${INPUT_ENVIROMENT}
 
   echo 'DEPLOYMENT ' ${INPUT_ENVIROMENT} ' DONE'
