@@ -33,11 +33,14 @@ function  setUpAWSCredential() {
 
 function runDeployer() {
   echo 'RUNINING DEPLOYMENT FOR ' ${INPUT_ENVIROMENT}
-  cd deployment
+  ls
+  echo '--------------------------'
+  echo $(ls)
+  cd ~/deployment
   sh ./deploy.sh ${INPUT_ENVIROMENT}
 
   echo 'DEPLOYMENT ' ${INPUT_ENVIROMENT} ' DONE'
 }
 
-echo '[entrypoint.sh] STARING DEPLOYMENT'
+echo '[entrypoint.sh] STARTING DEPLOYMENT'
 main
