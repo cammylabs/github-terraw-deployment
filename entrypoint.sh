@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 function main(){
   sanitize "${INPUT_ENVIROMENT}" "enviroment"
   sanitize "${INPUT_AWS_REGION}" "aws_region"
@@ -33,11 +35,11 @@ function  setUpAWSCredential() {
 
 function runDeployer() {
   echo 'RUNINING DEPLOYMENT FOR ' ${INPUT_ENVIROMENT}
-  ls
-  echo '--------------------------'
-  echo $(ls)
+
+  DEPLOY_LOCATION=${ locate -n1 deploy.sh}
+  echo DEPLOY_LOCATION
   cd ~/deployment
-  sh ./deploy.sh ${INPUT_ENVIROMENT}
+  sh .DEPLOY_LOCATION ${INPUT_ENVIROMENT}
 
   echo 'DEPLOYMENT ' ${INPUT_ENVIROMENT} ' DONE'
 }
