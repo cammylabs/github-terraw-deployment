@@ -35,7 +35,7 @@ function  setUpAWSCredential() {
 function runDeployer() {
   echo 'RUNINING DEPLOYMENT FOR ' ${INPUT_ENVIROMENT}
 
-  for file in $(find source -name 'build.sh'); do
+  for file in $(find deployment -name 'build.sh'); do
         dir=$(dirname $file)
         cd $dir && ./build.sh ${INPUT_ENVIROMENT} || exit 2
         cd $CWD
