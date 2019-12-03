@@ -7,6 +7,7 @@ RUN apk -v --update add \
         groff \
         less \
         mailcap \
+        git \
         && \
     pip install --upgrade awscli==1.16.292 s3cmd==2.0.1 python-magic && \
     apk -v --purge del py-pip && \
